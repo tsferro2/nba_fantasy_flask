@@ -62,7 +62,7 @@ line = "=" * 55
 print(line)
 print(f"Statistics are current as the latest www.basketball-reference.com update checked at {now}")
 print()
-print("Win % Standings:")
+print("Win % Standings")
 print()
 print(custom_standings[['W', 'L', 'Win %']])
 
@@ -70,7 +70,7 @@ print(custom_standings[['W', 'L', 'Win %']])
 average_psg = custom_standings[['PS/G']].copy()
 average_psg.sort_values('PS/G', ascending=False, inplace=True)
 
-print("Average PS/G Standings:")
+print("Average PS/G Standings")
 print()
 print(average_psg.to_string(index=True))  # Keep index in the output
 print(line)
@@ -79,7 +79,7 @@ print(line)
 average_pag = custom_standings[['PA/G']].copy()
 average_pag.sort_values('PA/G', ascending=True, inplace=True)
 
-print("Average PA/G Standings:")
+print("Average PA/G Standings")
 print()
 print(average_pag.to_string(index=True))  # Keep index in the output
 print(line)
@@ -96,7 +96,7 @@ for team, team_list in teams.items():
     team_standings = team_standings.sort_values('Win %', ascending=False)
 
 
-    print(f"\n{team}'s Trams:")
+    print(f"\n{team}'s Trams")
     print()
     print(team_standings.to_string(index=False))
     print(line)
