@@ -1,0 +1,70 @@
+<h1>NBA Team Fantasy Standings - Brought to you by Princeton Notary Services</h1>
+<h2>Win % Standings:</h2>
+<table>
+    <tr>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+        <th>Win %</th>
+    </tr>
+    {% for team, data in custom_standings.iterrows() %}
+        <tr>
+            <td>{{ team }}</td>
+            <td>{{ data['W'] }}</td>
+            <td>{{ data['L'] }}</td>
+            <td>{{ data['Win %'] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<h2>Average PS/G Standings:</h2>
+<table>
+    <tr>
+        <th>Team</th>
+        <th>PS/G</th>
+    </tr>
+    {% for team, data in average_psg.iterrows() %}
+        <tr>
+            <td>{{ team }}</td>
+            <td>{{ data['PS/G'] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<h2>Average PA/G Standings:</h2>
+<table>
+    <tr>
+        <th>Team</th>
+        <th>PA/G</th>
+    </tr>
+    {% for team, data in average_pag.iterrows() %}
+        <tr>
+            <td>{{ team }}</td>
+            <td>{{ data['PA/G'] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% for team, team_data in team_stats.items() %}
+    <h2>{{ team }}'s Teams:</h2>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>W</th>
+            <th>L</th>
+            <th>Win %</th>
+            <th>PS/G</th>
+            <th>PA/G</th>
+        </tr>
+        {% for _, data in team_data.iterrows() %}
+            <tr>
+                <td>{{ data['Team'] }}</td>
+                <td>{{ data['W'] }}</td>
+                <td>{{ data['L'] }}</td>
+                <td>{{ data['Win %'] }}</td>
+                <td>{{ data['PS/G'] }}</td>
+                <td>{{ data['PA/G'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endfor %}
